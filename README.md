@@ -20,10 +20,14 @@ v add React to the frontend, remove the backend
 https://github.com/neu-se/spring-26-react
 ```
 
-The functional content of this project is a minimal Express transcript API,
-for a very simple transcript server, and tests using Supertest.
+## Express Configuration
 
-The API has the following endpoints:
+The functional content of this project is a minimal Express transcript API for
+a very simple transcript server.
+
+### Express API
+
+The Express server's API has the following endpoints:
 
 | Endpoint             | Method | Description                         |
 | -------------------- | ------ | ----------------------------------- |
