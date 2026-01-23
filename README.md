@@ -1,10 +1,10 @@
-# Base project
+# CS4530 Template Project
 
-This is a base project for CS4530, Software Engineering at Northeastern.
-
-This repository is part of a tree of template-like projects:
+This is a template project for CS4530, Software Engineering at Northeastern.
+It is part of a tree of template projects:
 
 ```
+Base configuration:
 https://github.com/neu-se/spring-26-base
 |
 |
@@ -20,20 +20,23 @@ v add React to the frontend, remove the backend
 https://github.com/neu-se/spring-26-react
 ```
 
-The functional content of this project is a minimal Express transcript API.
-
 ## Base configuration
+
+The functional content of this project is a minimal "transcript service" that
+registers students by assigning them an ID and then lets course grades be
+added and queried. Everything in the `./src` directory can be deleted to
+create a true empty project.
 
 ### NPM Scripts
 
-This sets up a set of commands that CS4530 projects should consistently
+This sets up a set of commands that CS4530 templates should consistently
 support:
 
 - `npm run check` runs TypeScript
 - `npm run lint` runs ESLint, and `npm run lint:fix` runs eslint with the
   `--fix` option
 - `npm run prettier` checks formatting, and `npm run prettier:fix` writes
-  formatted files back
+  formatted files back to disk
 - `npm run test` runs Vitest tests and reports coverage
 
 When appropriate, projects should also have the following scripts:
