@@ -1,4 +1,4 @@
-import { addGrade, addStudent, getTranscript } from "./service";
+import { addGrade, addStudent, getTranscript } from "./service.ts";
 import "./style.css";
 
 const showNewStudentDiv = document.querySelector<HTMLDivElement>("#showNewStudent")!;
