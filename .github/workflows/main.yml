@@ -31,5 +31,8 @@ jobs:
       - name: Linting
         run: npm run lint
 
+      - name: Load Playwright
+        run: npx playwright install --with-deps
+
       - name: Tests
         run: npm run test

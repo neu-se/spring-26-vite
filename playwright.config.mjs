@@ -1,26 +1,26 @@
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices } from "@playwright/test";
 
 /* global process */ // TODO: is there a better way to avoid making ESLint angry?
 export default defineConfig({
   // Where the tests live, relative to this file
-  testDir: './frontend/tests/e2e',
+  testDir: "./frontend/tests/e2e",
 
   // Fail the build on CI if you accidentally left test.only in the source code.
   forbidOnly: !!process.env.CI,
 
   // The HTML reporter gives nice, pretty reports
-  reporter: process.env.CI ? 'dot' : [['html', { outputFolder: 'playwright-report' }]],
+  reporter: process.env.CI ? "dot" : [["html", { outputFolder: "playwright-report" }]],
 
   // No parallelism (slower, but can avoid errors with overlapping tests)
   workers: 1,
 
   // Settings that we'd rather set once, rather than in every test file
   use: {
-    baseURL: 'http://localhost:5173',
+    baseURL: "http://localhost:5173",
   },
 
   // Just test with chrome
-  projects: [{ name: 'chromium', use: devices['Desktop Chrome'] }],
+  projects: [{ name: "chromium", use: devices["Desktop Chrome"] }],
 
   // This sets up the two-server development environment that we recommend,
   // the Vite frontend server that the tests will connect to, and the Express
@@ -30,18 +30,18 @@ export default defineConfig({
   // server.
   webServer: [
     {
-      name: 'Frontend',
-      cwd: '..',
-      command: 'npm run dev:frontend',
+      name: "Frontend",
+      cwd: "..",
+      command: "npm run dev:frontend",
       reuseExistingServer: !process.env.CI,
-      url: 'http://localhost:5173',
+      url: "http://localhost:5173",
     },
     {
-      name: 'Server',
-      cwd: '..',
-      command: 'npm run dev:server',
+      name: "Server",
+      cwd: "..",
+      command: "npm run dev:server",
       reuseExistingServer: !process.env.CI,
-      url: 'http://localhost:3000',
+      url: "http://localhost:3000",
     },
   ],
 });
