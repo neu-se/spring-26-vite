@@ -11,16 +11,20 @@
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "test": "vitest run --coverage",
+    "test": "npm-run-all test:*",
+    "test:frontend": "playwright test",
+    "test:server": "vitest run --coverage",
     "dev": "echo \"Run \\`npm run dev:server\\` and \\`npm run dev:frontend\\` separately\\n\"",
     "dev:frontend": "vite frontend",
     "dev:server": "node --watch ./src/server.ts",
     "build": "tsc -p frontend/tsconfig.json --noEmit && vite build frontend",
-    "start": "MODE=production node ./src/server.ts"
+    "start": "MODE=production node ./src/server.ts",
+    "playwright": "playwright test --ui"
   },
   "author": "Rob Simmons",
   "devDependencies": {
     "@eslint/js": "^9.39.2",
+    "@playwright/test": "^1.58.1",
     "@types/express": "^5.0.6",
     "@types/supertest": "^6.0.3",
     "@vitest/coverage-v8": "^4.0.18",
