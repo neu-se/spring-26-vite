@@ -16,7 +16,7 @@ export default defineConfig({
 
   // Settings that we'd rather set once, rather than in every test file
   use: {
-    baseURL: "http://localhost:4530",
+    baseURL: "http://localhost:8000",
   },
 
   // Just test with chrome
