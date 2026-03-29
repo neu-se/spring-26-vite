@@ -63,7 +63,7 @@ This base project has an opinionated ESLint configuration that relies on
 The ESLint configuration makes some assumptions about project structure:
 
 - Frontend code is code that lives in `./frontend` or `./client`, and uses
-  React and JSX. (This code is subject to different linter rules.)
+  React and JSX. This code is subject to different linter rules.
 - Test code lives in a `**/tests` directory OR has a `*.spec.ts(x)` or a
   `*.test.ts(x)` filename. Tests can use devDependencies, unlike other code.
 - Config files all have `*.config.mjs` filenames (vite, vitest, playwright,
@@ -89,15 +89,9 @@ The ESLint configuration makes some assumptions about project structure:
 
 TypeScript is configured with options that support
 [type stripping](https://nodejs.org/api/typescript.html#type-stripping).
-Beyond this, on top of regular strict settings, the TypeScript configuration
-enables:
-
-- `forceConsistentCasingInFileNames`, to avoid osx/linux compatibility
-  heartbreak
-- `noFallthroughCasesInSwitch` and `noImplicitReturns`, which are linter-like
-  properties that don't seem to be supported by typed linting in ESLint
-- `noUncheckedSideEffectImports`, which can short-circuit unexpected failures
-  due to `.css` files (or similar) not being checked in
+Beyond this, the TypeScript configuration enables `noFallthroughCasesInSwitch`
+and `noImplicitReturns`, which are linter-like properties that don't seem to
+well-supported by typed linting in ESLint.
 
 ### Prettier
 
